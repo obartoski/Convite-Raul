@@ -26,3 +26,6 @@ No `index.html`, altere `NOME DO EVENTO`, o campo `DATA` (atualmente "A definir"
 ## Tecnologia
 
 HTML, CSS e JavaScript (não precisa de Java nem de compilação).
+
+## Atualização v6
+A confirmação foi revisada e o JavaScript recebe um parâmetro de versão para evitar cache do navegador. O formulário é apenas demonstrativo e ainda não envia dados para nenhuma planilha.
