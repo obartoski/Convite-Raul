@@ -1,23 +1,21 @@
-# Convite Raul Tomaz — versão textura premium
+# Convite Raul Tomaz — textura premium v2
 
-Projeto pronto para publicar no GitHub Pages.
+Versão atualizada com:
 
-## Arquivos
+- vermelho mais próximo da identidade original
+- fundo e borda em veludo canelado 3D
+- papel interno com textura, dobra e leve aspecto amassado
+- selo de cera simples no topo
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `assets/logo-raul-tomaz.png`
+## Publicação no GitHub Pages
 
-## Como publicar no GitHub Pages
-
-1. Crie um repositório no GitHub.
-2. Envie todos os arquivos deste pacote para a raiz do repositório, mantendo a pasta `assets`.
+1. Envie todos os arquivos para a raiz do repositório.
+2. Mantenha `index.html`, `style.css`, `script.js` e a pasta `assets`.
 3. Vá em **Settings > Pages**.
-4. Em **Build and deployment**, selecione **Deploy from a branch**.
-5. Escolha a branch `main` e a pasta `/root`.
+4. Escolha **Deploy from a branch**.
+5. Use a branch `main` e a pasta `/root`.
 6. Salve e aguarde a publicação.
 
 ## Observação
 
-O formulário de confirmação nesta versão é visual e demonstra a experiência. Ele ainda não envia dados para planilha.
+A confirmação continua funcionando de forma visual, sem integração com planilha nesta etapa.
