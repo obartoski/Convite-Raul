@@ -21,7 +21,7 @@ O botão **Confirmar presença** abre um formulário interativo. Ao enviar, ele 
 
 ## Editar textos
 
-No `index.html`, altere `NOME DO EVENTO`, local, experiências, taxa e demais informações. Em `style.css`, personalize as cores a partir do bloco `:root`.
+No `index.html`, altere `NOME DO EVENTO`, o campo `DATA` (atualmente "A definir"), local, experiências, taxa e demais informações. Em `style.css`, personalize as cores a partir do bloco `:root`.
 
 ## Tecnologia
 
