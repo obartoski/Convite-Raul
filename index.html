@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#202226">
+<title>NOME DO EVENTO — Raul Tomaz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<main class="page">
+<img class="watermark" src="assets/logo-raul-tomaz.png" alt="">
+<header class="header">
+<img class="brand" src="assets/logo-raul-tomaz.png" alt="Logo Raul Tomaz">
+<div class="micro">RAUL TOMAZ APRESENTA</div>
+</header>
+<section class="hero">
+<div class="badge">Convite exclusivo</div>
+<h1 class="title"><span>Nome do</span><span class="accent">Evento</span></h1>
+<p class="desc">Uma confraternização premium e descontraída para reunir boa energia, esporte e pessoas que fazem parte dessa jornada.</p>
+<div class="info">
+<div class="card"><small>LOCAL</small><strong>Arenas The Sen5es</strong></div>
+<div class="card"><small>EXPERIÊNCIA</small><strong>Quadras de areia liberadas, drinks e espetos à vontade</strong></div>
+<div class="card price"><small>TAXA DE PARTICIPAÇÃO</small><strong>R$ 89,00 por pessoa</strong></div>
+</div>
+<div class="cta-wrap">
+<button class="cta" id="open">Confirmar presença</button>
+<div class="note">Versão de teste para aprovação. O botão já funciona e o arquivo está pronto para subir no GitHub Pages.</div>
+</div>
+</section>
+<footer class="footer">
+<div class="rule"></div>
+<div class="quote">Good energy. Great people.</div>
+<div class="sign">Raul Tomaz / 2026</div>
+</footer>
+</main>
+</div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+<div class="panel">
+<button class="close" id="close" aria-label="Fechar">×</button>
+<div id="formwrap">
+<div class="micro2">RSVP / LISTA DE CONVIDADOS</div>
+<h2 id="mt">Você vai?</h2>
+<p>Uma resposta rápida e pronto. Sem enrolação.</p>
+<form id="rsvp">
+<label for="name">Seu nome</label>
+<input id="name" name="name" placeholder="Como podemos te chamar?" autocomplete="name" required maxlength="90">
+<label>Confirmação</label>
+<div class="choice">
+<button type="button" class="active" data-choice="Sim">Confirmar</button>
+<button type="button" data-choice="Não">Não poderei</button>
+</div>
+<input type="hidden" name="presence" id="presence" value="Sim">
+<button class="submit" type="submit">Enviar resposta</button>
+<p class="disclaimer">Nesta versão de teste, nenhuma informação será salva.</p>
+</form>
+</div>
+<div class="success" id="success">
+<div class="check">✓</div>
+<h2 id="successTitle">Resposta recebida!</h2>
+<p id="successText">Esta é uma demonstração.</p>
+<button class="submit" id="finish">Fechar</button>
+</div>
+</div>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
