@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#651018">
+  <meta name="theme-color" content="#5f0f18">
   <title>NOME DO EVENTO — Raul Tomaz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <main class="page-shell">
     <section class="invite-frame">
       <div class="velvet-surface"></div>
-      <div class="frame-rib rib-left"></div>
-      <div class="frame-rib rib-right"></div>
+      <div class="frame-shadow"></div>
 
       <div class="paper-card">
         <div class="paper-texture"></div>
@@ -26,13 +25,9 @@
         <div class="paper-crumple crumple-3"></div>
 
         <header class="invite-header">
-          <div class="wax-seal-wrap" aria-hidden="true">
-            <div class="wax-shadow"></div>
-            <div class="wax-seal">
-              <div class="wax-ring outer"></div>
-              <div class="wax-ring inner"></div>
-            </div>
-          </div>
+          <button class="wax-seal-wrap" id="sealOpen" type="button" aria-label="Abrir confirmação de presença" title="Confirmar presença">
+            <img class="wax-seal-image" src="assets/selo-cera-raul.png" alt="Selo Raul Tomaz">
+          </button>
           <p class="eyebrow">RAUL TOMAZ APRESENTA</p>
           <h1 class="main-title">
             <span class="title-top">NOME DO</span>
@@ -97,6 +92,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

@@ -1,14 +1,12 @@
-# Convite Raul Tomaz — textura premium v2
+# Convite Raul Tomaz — v4 linho + novo selo
 
 Versão atualizada com:
-
-- vermelho mais próximo da identidade original
-- fundo e borda em veludo canelado 3D
-- papel interno com textura, dobra e leve aspecto amassado
-- selo de cera simples no topo
+- fundo de veludo mantido
+- moldura mais escura para destacar o fundo do convite
+- papel com textura de linho
+- novo selo de cera aplicado no topo
 
 ## Publicação no GitHub Pages
-
 1. Envie todos os arquivos para a raiz do repositório.
 2. Mantenha `index.html`, `style.css`, `script.js` e a pasta `assets`.
 3. Vá em **Settings > Pages**.
@@ -17,5 +15,4 @@ Versão atualizada com:
 6. Salve e aguarde a publicação.
 
 ## Observação
-
-A confirmação continua funcionando de forma visual, sem integração com planilha nesta etapa.
+A confirmação continua funcionando apenas visualmente nesta etapa.

@@ -36,6 +36,7 @@
   }
 
   openModalBtn.addEventListener('click', openModal);
+  document.getElementById('sealOpen')?.addEventListener('click', openModal);
   closeModalBtn.addEventListener('click', closeModal);
   finishBtn.addEventListener('click', closeModal);
 
