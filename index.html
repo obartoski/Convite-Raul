@@ -3,27 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#4f2026">
+  <meta name="theme-color" content="#651018">
   <title>NOME DO EVENTO — Raul Tomaz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <main class="page-shell">
     <section class="invite-frame">
       <div class="velvet-surface"></div>
+      <div class="frame-rib rib-left"></div>
+      <div class="frame-rib rib-right"></div>
+
       <div class="paper-card">
         <div class="paper-texture"></div>
-        <div class="paper-fold fold-v"></div>
-        <div class="paper-fold fold-h"></div>
+        <div class="paper-crease crease-v"></div>
+        <div class="paper-crease crease-h"></div>
+        <div class="paper-crumple crumple-1"></div>
+        <div class="paper-crumple crumple-2"></div>
+        <div class="paper-crumple crumple-3"></div>
 
         <header class="invite-header">
-          <div class="seal-wrap" aria-hidden="true">
-            <div class="seal-rib"></div>
-            <div class="seal-mark">
-              <img src="assets/logo-raul-tomaz.png" alt="Logo Raul Tomaz" class="seal-logo">
+          <div class="wax-seal-wrap" aria-hidden="true">
+            <div class="wax-shadow"></div>
+            <div class="wax-seal">
+              <div class="wax-ring outer"></div>
+              <div class="wax-ring inner"></div>
             </div>
           </div>
           <p class="eyebrow">RAUL TOMAZ APRESENTA</p>
@@ -66,27 +73,22 @@
     <div class="modal-backdrop" data-close="true"></div>
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
       <button class="close-button" id="closeModal" type="button" aria-label="Fechar">×</button>
-
       <div class="panel-paper"></div>
       <div class="modal-state" id="formState">
         <p class="panel-kicker">LISTA DE CONVIDADOS</p>
         <h2 class="modal-title" id="confirmTitle">Podemos contar com sua presença?</h2>
-
         <form id="confirmForm" novalidate>
           <label class="field-label" for="guestName">Seu nome</label>
           <input class="text-input" id="guestName" name="guestName" type="text" placeholder="Digite seu nome" autocomplete="name" maxlength="90" required>
-
           <label class="field-label">Confirmação</label>
           <div class="choice-row" role="group" aria-label="Escolha sua resposta">
             <button class="choice-btn active" type="button" data-choice="Sim">Confirmar</button>
             <button class="choice-btn" type="button" data-choice="Não">Não poderei</button>
           </div>
           <input type="hidden" id="presenceValue" name="presenceValue" value="Sim">
-
           <button class="submit-btn" id="submitBtn" type="submit">Enviar resposta</button>
         </form>
       </div>
-
       <div class="modal-state success-state" id="successState" hidden>
         <div class="success-emblem">✓</div>
         <h2 class="success-title" id="successTitle">Perfeito!</h2>
@@ -95,6 +97,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
