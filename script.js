@@ -1,59 +1,77 @@
-'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
+(function () {
   const modal = document.getElementById('modal');
-  const openButton = document.getElementById('open');
-  const closeButton = document.getElementById('close');
-  const finishButton = document.getElementById('finish');
-  const form = document.getElementById('rsvp');
-  const nameInput = document.getElementById('name');
-  const presenceInput = document.getElementById('presence');
-  const formWrap = document.getElementById('formwrap');
-  const success = document.getElementById('success');
+  const openModalBtn = document.getElementById('openModal');
+  const closeModalBtn = document.getElementById('closeModal');
+  const finishBtn = document.getElementById('finishBtn');
+  const form = document.getElementById('confirmForm');
+  const guestNameInput = document.getElementById('guestName');
   const successTitle = document.getElementById('successTitle');
+  const formState = document.getElementById('formState');
+  const successState = document.getElementById('successState');
+  const presenceValue = document.getElementById('presenceValue');
+  const choiceButtons = Array.from(document.querySelectorAll('.choice-btn'));
 
-  const openModal = () => {
-    formWrap.style.display = 'block';
-    success.style.display = 'none';
-    modal.classList.add('open');
-    nameInput.focus();
-  };
-  const closeModal = () => {
-    modal.classList.remove('open');
-    openButton.focus();
-  };
+  if (!modal || !openModalBtn || !form) return;
 
-  openButton.addEventListener('click', openModal);
-  closeButton.addEventListener('click', closeModal);
-  finishButton.addEventListener('click', closeModal);
-  modal.addEventListener('click', (event) => {
-    if (event.target === modal) closeModal();
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
-  });
+  function openModal() {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    formState.hidden = false;
+    successState.hidden = true;
+    setTimeout(() => guestNameInput.focus(), 50);
+  }
 
-  document.querySelectorAll('[data-choice]').forEach((button) => {
-    button.addEventListener('click', () => {
-      document.querySelectorAll('[data-choice]').forEach((item) => item.classList.remove('active'));
-      button.classList.add('active');
-      presenceInput.value = button.dataset.choice;
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    setTimeout(() => openModalBtn.focus(), 50);
+  }
+
+  function setChoice(value) {
+    presenceValue.value = value;
+    choiceButtons.forEach((button) => {
+      button.classList.toggle('active', button.dataset.choice === value);
     });
+  }
+
+  openModalBtn.addEventListener('click', openModal);
+  closeModalBtn.addEventListener('click', closeModal);
+  finishBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target instanceof HTMLElement && target.dataset.close === 'true') {
+      closeModal();
+    }
   });
 
-  // Submissão de demonstração: não registra dados nem faz pagamento.
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+
+  choiceButtons.forEach((button) => {
+    button.addEventListener('click', () => setChoice(button.dataset.choice || 'Sim'));
+  });
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const name = nameInput.value.trim();
-    if (!name) {
-      nameInput.focus();
+    const rawName = guestNameInput.value.trim();
+
+    if (!rawName) {
+      guestNameInput.focus();
+      guestNameInput.reportValidity?.();
       return;
     }
-    const firstName = name.split(/\s+/)[0];
-    successTitle.textContent = presenceInput.value === 'Sim'
+
+    const firstName = rawName.split(/\s+/)[0];
+    successTitle.textContent = presenceValue.value === 'Sim'
       ? `Perfeito, ${firstName}!`
       : `Tudo certo, ${firstName}.`;
-    formWrap.style.display = 'none';
-    success.style.display = 'block';
+
+    formState.hidden = true;
+    successState.hidden = false;
   });
-});
+})();

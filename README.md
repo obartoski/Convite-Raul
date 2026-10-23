@@ -1,31 +1,23 @@
-# Convite Raul Tomaz — versão demonstrativa
+# Convite Raul Tomaz — versão textura premium
+
+Projeto pronto para publicar no GitHub Pages.
 
 ## Arquivos
 
-- `index.html`: página do convite
-- `style.css`: estilos e versão mobile
-- `script.js`: interatividade do formulário
-- `assets/logo-raul-tomaz.png`: logo com fundo transparente
+- `index.html`
+- `style.css`
+- `script.js`
+- `assets/logo-raul-tomaz.png`
 
-## Publicar no GitHub Pages
+## Como publicar no GitHub Pages
 
 1. Crie um repositório no GitHub.
-2. Envie **todos os arquivos e a pasta `assets` para a raiz** do repositório. No GitHub, extraia o ZIP antes de fazer upload (não envie apenas o arquivo `.zip`).
-3. Abra **Settings > Pages** e, em **Build and deployment**, selecione **Deploy from a branch**.
-4. Escolha a branch `main`, a pasta `/(root)` e clique em **Save**.
-5. Acesse o endereço indicado pelo GitHub Pages depois da publicação.
+2. Envie todos os arquivos deste pacote para a raiz do repositório, mantendo a pasta `assets`.
+3. Vá em **Settings > Pages**.
+4. Em **Build and deployment**, selecione **Deploy from a branch**.
+5. Escolha a branch `main` e a pasta `/root`.
+6. Salve e aguarde a publicação.
 
-## Importante sobre a confirmação
+## Observação
 
-O botão **Confirmar presença** abre um formulário interativo. Ao enviar, ele mostra uma mensagem de demonstração no próprio navegador, **sem salvar nomes nem respostas**. Para receber confirmações reais será preciso conectar um backend ou Google Sheets/Apps Script e, se for o caso, disponibilizar orientações sobre uso dos dados dos convidados.
-
-## Editar textos
-
-No `index.html`, altere `NOME DO EVENTO`, o campo `DATA` (atualmente "A definir"), local, experiências, taxa e demais informações. Em `style.css`, personalize as cores a partir do bloco `:root`.
-
-## Tecnologia
-
-HTML, CSS e JavaScript (não precisa de Java nem de compilação).
-
-## Atualização v6
-A confirmação foi revisada e o JavaScript recebe um parâmetro de versão para evitar cache do navegador. O formulário é apenas demonstrativo e ainda não envia dados para nenhuma planilha.
+O formulário de confirmação nesta versão é visual e demonstra a experiência. Ele ainda não envia dados para planilha.
