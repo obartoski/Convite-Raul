@@ -7,8 +7,8 @@
   <title>NOME DO EVENTO — Raul Tomaz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
   <main class="page-shell">
@@ -25,10 +25,10 @@
         <div class="paper-crumple crumple-3"></div>
 
         <header class="invite-header">
-          <button class="wax-seal-wrap" id="sealOpen" type="button" aria-label="Abrir confirmação de presença" title="Confirmar presença">
-            <img class="wax-seal-image" src="assets/selo-cera-raul.png" alt="Selo Raul Tomaz">
-          </button>
-          <p class="eyebrow">RAUL TOMAZ APRESENTA</p>
+          <div class="wax-seal-wrap" aria-hidden="true">
+            <img class="wax-seal-image" src="assets/selo-cera-raul.png" alt="">
+          </div>
+          <p class="eyebrow">RAUL TOMAZ PRESENTS</p>
           <h1 class="main-title">
             <span class="title-top">NOME DO</span>
             <span class="title-bottom">EVENTO</span>
@@ -36,24 +36,27 @@
           <p class="intro-copy">Um encontro premium e descontraído para reunir esporte, boa energia e pessoas que fazem parte dessa jornada.</p>
         </header>
 
-        <section class="info-grid" aria-label="Informações principais do evento">
-          <article class="info-item">
-            <span class="label">DATA</span>
-            <strong class="value">A definir</strong>
-          </article>
-          <article class="info-item">
-            <span class="label">HORÁRIO</span>
-            <strong class="value">Em breve</strong>
-          </article>
-          <article class="info-item">
-            <span class="label">LOCAL</span>
-            <strong class="value">Arenas The Sen5es</strong>
+        <section class="event-details" aria-label="Informações do evento">
+          <div class="detail-pair">
+            <article class="detail-cell">
+              <span class="detail-label">DATE</span>
+              <strong class="detail-value">A definir</strong>
+            </article>
+            <article class="detail-cell">
+              <span class="detail-label">TIME</span>
+              <strong class="detail-value">Em breve</strong>
+            </article>
+          </div>
+          <article class="detail-location">
+            <span class="detail-label">PLACE</span>
+            <strong class="detail-value">Arenas The Sen5es</strong>
           </article>
         </section>
 
         <section class="experience-block">
           <p class="section-kicker">A EXPERIÊNCIA</p>
-          <p class="experience-copy">Quadras de areia liberadas, drinks e espetos à vontade.</p>
+          <p class="experience-copy">Quadras liberadas <span aria-hidden="true">•</span> Drinks &amp; gastronomia</p>
+          <p class="experience-note">Consumação inclusa</p>
           <p class="price-line">Taxa de participação <strong>R$ 89,00 por pessoa</strong></p>
         </section>
 
@@ -70,28 +73,31 @@
       <button class="close-button" id="closeModal" type="button" aria-label="Fechar">×</button>
       <div class="panel-paper"></div>
       <div class="modal-state" id="formState">
+        <div class="dialog-monogram" aria-hidden="true"><img src="assets/logo-raul-tomaz.png" alt=""></div>
         <p class="panel-kicker">LISTA DE CONVIDADOS</p>
-        <h2 class="modal-title" id="confirmTitle">Podemos contar com sua presença?</h2>
+        <h2 class="modal-title" id="confirmTitle">Podemos contar com<br><em>sua presença?</em></h2>
+        <div class="dialog-divider" aria-hidden="true"><span></span></div>
         <form id="confirmForm" novalidate>
-          <label class="field-label" for="guestName">Seu nome</label>
-          <input class="text-input" id="guestName" name="guestName" type="text" placeholder="Digite seu nome" autocomplete="name" maxlength="90" required>
-          <label class="field-label">Confirmação</label>
+          <label class="field-label" for="guestName">SEU NOME</label>
+          <input class="text-input" id="guestName" name="guestName" type="text" placeholder="Como podemos te chamar?" autocomplete="name" maxlength="90" required>
+          <label class="field-label">CONFIRMAÇÃO</label>
           <div class="choice-row" role="group" aria-label="Escolha sua resposta">
-            <button class="choice-btn active" type="button" data-choice="Sim">Confirmar</button>
-            <button class="choice-btn" type="button" data-choice="Não">Não poderei</button>
+            <button class="choice-btn active" type="button" data-choice="Sim" aria-pressed="true"><span class="choice-indicator" aria-hidden="true"></span>Estarei presente</button>
+            <button class="choice-btn" type="button" data-choice="Não" aria-pressed="false"><span class="choice-indicator" aria-hidden="true"></span>Não poderei</button>
           </div>
           <input type="hidden" id="presenceValue" name="presenceValue" value="Sim">
-          <button class="submit-btn" id="submitBtn" type="submit">Enviar resposta</button>
+          <button class="submit-btn" id="submitBtn" type="submit">ENVIAR RESPOSTA <span aria-hidden="true">↗</span></button>
         </form>
       </div>
       <div class="modal-state success-state" id="successState" hidden>
-        <div class="success-emblem">✓</div>
+        <div class="success-mark" aria-hidden="true"><img src="assets/selo-cera-raul.png" alt=""></div>
+        <p class="panel-kicker">RESPOSTA RECEBIDA</p>
         <h2 class="success-title" id="successTitle">Perfeito!</h2>
-        <button class="submit-btn" id="finishBtn" type="button">Fechar</button>
+        <button class="submit-btn" id="finishBtn" type="button">FECHAR <span aria-hidden="true">↗</span></button>
       </div>
     </div>
   </div>
 
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=16"></script>
 </body>
 </html>

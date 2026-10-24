@@ -32,11 +32,11 @@
     presenceValue.value = value;
     choiceButtons.forEach((button) => {
       button.classList.toggle('active', button.dataset.choice === value);
+      button.setAttribute('aria-pressed', String(button.dataset.choice === value));
     });
   }
 
   openModalBtn.addEventListener('click', openModal);
-  document.getElementById('sealOpen')?.addEventListener('click', openModal);
   closeModalBtn.addEventListener('click', closeModal);
   finishBtn.addEventListener('click', closeModal);
 
