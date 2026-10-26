@@ -1,14 +1,22 @@
-# Convite Raul Tomaz — V09 | Confirmação editorial
+# Convite Raul Tomaz — V11
 
-Esta versão mantém o convite principal da V08, com veludo, papel de linho, selo decorativo e os textos existentes. A tela de confirmação e a tela de sucesso foram redesenhadas.
+Site estático pronto para GitHub Pages.
+
+## Arquivos
+- `index.html`: convite principal
+- `confirmacao.html`: página independente de resposta
+- `style.css`: estilos de ambas as páginas
+- `script.js` e `confirmacao.js`: interação e exibição
+- `assets/`: selo, logo e texturas
 
 ## Publicação
+Envie todos os arquivos para a raiz do repositório GitHub (mantendo `assets/`).
+Em **Settings > Pages**, use **Deploy from a branch**, branch `main`, pasta `/(root)`.
 
-Extraia o ZIP e envie `index.html`, `style.css`, `script.js` e `assets/` à raiz do repositório GitHub Pages, substituindo os anteriores.
+## Importante: MODO DEMONSTRAÇÃO
+As respostas **não são salvas nem enviadas** para uma planilha. A página de resultado
+mostra apenas a opção selecionada na sessão atual do navegador.
 
-## Importante
-
-A confirmação permanece uma **demonstração local**: ainda não registra nomes nem presenças em planilhas.
-
-## Versão 10
-- LOCATION alterado para PLACE no convite; formulário premium mantido.
+Quando integrarmos com Google Sheets, o redirecionamento para a página de
+confirmação deverá ocorrer **somente depois que o servidor confirmar o registro**.
+Evite coletar respostas reais com esta versão de teste.

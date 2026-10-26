@@ -1,78 +1,62 @@
-
-(function () {
+(() => {
   const modal = document.getElementById('modal');
-  const openModalBtn = document.getElementById('openModal');
-  const closeModalBtn = document.getElementById('closeModal');
-  const finishBtn = document.getElementById('finishBtn');
+  const opener = document.getElementById('openModal');
+  const closer = document.getElementById('closeModal');
   const form = document.getElementById('confirmForm');
-  const guestNameInput = document.getElementById('guestName');
-  const successTitle = document.getElementById('successTitle');
-  const formState = document.getElementById('formState');
-  const successState = document.getElementById('successState');
-  const presenceValue = document.getElementById('presenceValue');
-  const choiceButtons = Array.from(document.querySelectorAll('.choice-btn'));
-
-  if (!modal || !openModalBtn || !form) return;
+  const nameInput = document.getElementById('guestName');
+  const presence = document.getElementById('presenceValue');
+  const choices = Array.from(document.querySelectorAll('.choice-btn'));
+  if (!modal || !opener || !form) return;
 
   function openModal() {
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
-    formState.hidden = false;
-    successState.hidden = true;
-    setTimeout(() => guestNameInput.focus(), 50);
+    setTimeout(() => nameInput.focus(), 30);
   }
-
   function closeModal() {
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
-    setTimeout(() => openModalBtn.focus(), 50);
+    opener.focus();
   }
-
-  function setChoice(value) {
-    presenceValue.value = value;
-    choiceButtons.forEach((button) => {
-      button.classList.toggle('active', button.dataset.choice === value);
-      button.setAttribute('aria-pressed', String(button.dataset.choice === value));
+  opener.addEventListener('click', openModal);
+  closer.addEventListener('click', closeModal);
+  modal.addEventListener('click', event => {
+    if (event.target?.dataset?.close === 'true') closeModal();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  });
+  choices.forEach(button => button.addEventListener('click', () => {
+    presence.value = button.dataset.choice;
+    choices.forEach(choice => {
+      const selected = choice === button;
+      choice.classList.toggle('active', selected);
+      choice.setAttribute('aria-pressed', String(selected));
     });
-  }
-
-  openModalBtn.addEventListener('click', openModal);
-  closeModalBtn.addEventListener('click', closeModal);
-  finishBtn.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target instanceof HTMLElement && target.dataset.close === 'true') {
-      closeModal();
-    }
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
-      closeModal();
-    }
-  });
-
-  choiceButtons.forEach((button) => {
-    button.addEventListener('click', () => setChoice(button.dataset.choice || 'Sim'));
-  });
-
-  form.addEventListener('submit', (event) => {
+  }));
+  form.addEventListener('submit', event => {
     event.preventDefault();
-    const rawName = guestNameInput.value.trim();
-
-    if (!rawName) {
-      guestNameInput.focus();
-      guestNameInput.reportValidity?.();
+    const fullName = nameInput.value.trim().replace(/\s+/g, ' ');
+    if (!fullName) {
+      nameInput.setCustomValidity('Informe seu nome.');
+      nameInput.reportValidity();
       return;
     }
-
-    const firstName = rawName.split(/\s+/)[0];
-    successTitle.textContent = presenceValue.value === 'Sim'
-      ? `Perfeito, ${firstName}!`
-      : `Tudo certo, ${firstName}.`;
-
-    formState.hidden = true;
-    successState.hidden = false;
+    nameInput.setCustomValidity('');
+    // Preview only. This is NOT a real RSVP record. Replace this flow with a
+    // server-confirmed response before launching to actual invited guests.
+    try {
+      sessionStorage.setItem('raul_preview_response', JSON.stringify({
+        name: fullName, presence: presence.value, preview: true
+      }));
+    } catch {
+      // Safari private mode and some browsers may block sessionStorage.
+      // Encode the same preview state in the URL fragment as fallback.
+      location.assign('confirmacao.html#' +
+        encodeURIComponent(JSON.stringify({name: fullName, presence: presence.value, preview: true})));
+      return;
+    }
+    location.assign('confirmacao.html');
   });
+  nameInput.addEventListener('input', () => nameInput.setCustomValidity(''));
 })();
