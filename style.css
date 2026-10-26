@@ -572,3 +572,8 @@ body {
 .response-title { margin-bottom: 0; }
 .response-summary { margin-top: 22px; }
 .response-back { margin-top: 22px; }
+
+/* V13 — mensagem calorosa após a resposta */
+.response-message { max-width:295px; margin:17px auto 0; color:#80615c; font:400 13px/1.7 'Manrope',sans-serif; }
+.response-message[hidden] { display:none; }
+.response-message:not([hidden]) + .response-summary { margin-top:23px; }

@@ -26,3 +26,6 @@ Evite coletar respostas reais com esta versão de teste.
 - removidos textos extras da página de confirmação
 - removida a seta do botão de retorno
 - página final mais limpa e direta
+
+## V13
+Mensagem personalizada abaixo do nome na página final, diferente para presença positiva e negativa. O envio permanece demonstrativo, sem planilha.

@@ -12,6 +12,7 @@
   const title = document.getElementById('responseTitle');
   const summary = document.getElementById('responseSummary');
   const selected = document.getElementById('responseSelected');
+  const message = document.getElementById('responseMessage');
   if (!data || data.preview !== true || typeof data.name !== 'string' || !['Sim', 'Não'].includes(data.presence)) {
     status.textContent = 'CONVITE RAUL TOMAZ';
     title.textContent = 'Seu convite está aqui.';
@@ -21,6 +22,10 @@
   const attending = data.presence === 'Sim';
   title.textContent = attending ? `Perfeito, ${firstName}!` : `Tudo certo, ${firstName}.`;
   status.textContent = attending ? 'PRESENÇA SELECIONADA' : 'AUSÊNCIA SELECIONADA';
+  message.textContent = attending
+    ? 'Vai ser um prazer ter você com a gente!'
+    : 'Que pena! Esperamos te encontrar na próxima.';
+  message.hidden = false;
   summary.hidden = false;
   selected.textContent = attending ? 'Estarei presente' : 'Não poderei comparecer';
 })();
