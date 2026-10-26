@@ -558,16 +558,17 @@ body {
 .response-paper { min-height: min(680px, calc(100svh - 76px)); display:flex; align-items:center; justify-content:center; padding: 39px 26px; }
 .response-content { position:relative; z-index:2; width:100%; display:flex; flex-direction:column; align-items:center; text-align:center; }
 .response-seal img { width:110px; max-width:30vw; height:auto; display:block; filter:drop-shadow(0 8px 9px rgba(60,5,15,.16)); }
-.response-eyebrow { color:#895e5e; font:700 9px/1.5 'Manrope',sans-serif; letter-spacing:.28em; margin:17px 0 22px; }
 .response-line { width:54px; height:1px; background:#b58d83; margin-bottom:25px; }
 .response-status { margin:0 0 12px; color:#996a6a; font:700 10px/1.45 'Manrope',sans-serif; letter-spacing:.21em; }
 .response-title { color:#58232c; font:600 clamp(42px,11vw,58px)/.99 'Cormorant Garamond',serif; letter-spacing:-.037em; margin:0 auto; max-width:350px; overflow-wrap:break-word; }
-.response-description { max-width:300px; margin:21px auto 0; color:#775854; font:400 13px/1.75 'Manrope',sans-serif; }
 .response-summary { width:100%; margin:26px 0 0; padding:17px 10px; border-block:1px solid rgba(88,36,44,.22); }
 .response-summary span { display:block; color:#90696a; font:700 9px/1.4 'Manrope',sans-serif; letter-spacing:.24em; }
 .response-summary strong { display:block; margin-top:8px; font:600 26px/1.2 'Cormorant Garamond',serif; color:#58232c; }
-.preview-warning { margin:26px auto 0; max-width:285px; color:#967874; font:600 10px/1.7 'Manrope',sans-serif; letter-spacing:.025em; }
-.response-back { min-height:53px; width:100%; display:flex; align-items:center; justify-content:center; gap:14px; margin-top:26px; background:#76232d; color:#fff; text-decoration:none; font:700 10px/1.2 'Manrope',sans-serif; letter-spacing:.17em; }
-.response-back span { font-size:18px; font-weight:400; }
+.response-back { min-height:53px; width:100%; display:flex; align-items:center; justify-content:center; margin-top:26px; background:#76232d; color:#fff; text-decoration:none; font:700 10px/1.2 'Manrope',sans-serif; letter-spacing:.17em; }
 .response-back:focus-visible { outline:2px solid #a14c59; outline-offset:3px; }
 @media (max-width:360px) { .response-paper { padding:30px 20px; } }
+
+.response-line { margin-bottom: 18px; }
+.response-title { margin-bottom: 0; }
+.response-summary { margin-top: 22px; }
+.response-back { margin-top: 22px; }

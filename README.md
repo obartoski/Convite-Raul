@@ -20,3 +20,9 @@ mostra apenas a opção selecionada na sessão atual do navegador.
 Quando integrarmos com Google Sheets, o redirecionamento para a página de
 confirmação deverá ocorrer **somente depois que o servidor confirmar o registro**.
 Evite coletar respostas reais com esta versão de teste.
+
+
+## Ajustes da V12
+- removidos textos extras da página de confirmação
+- removida a seta do botão de retorno
+- página final mais limpa e direta
