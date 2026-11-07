@@ -7,7 +7,7 @@ Suba `index.html`, `confirmacao.html`, `style.css`, `script.js`, `confirmacao.js
 - 12h: início da aula na areia
 - 13h30: abertura do buffet
 - 17h30: encerramento
-- Camiseta personalizada para participantes da aula na areia
+- Camiseta do Time Raul Tomaz para participantes da aula na areia
 - Buffet de espetos à vontade incluído; bebidas cobradas à parte
 - R$ 89,00 por pessoa
 - Após selecionar "Estarei presente", uma seção com QR Code Pix estático no valor de R$ 89,00, botão Copiar Pix Copia e Cola e chave Pix alternativa aparece na página de resposta.
@@ -25,3 +25,12 @@ Suba `index.html`, `confirmacao.html`, `style.css`, `script.js`, `confirmacao.js
 
 ### Pix Copia e Cola
 O mesmo payload do QR está em `pix-copia-e-cola.txt`.
+
+## Alterações da V15
+- Identidade em português: Raul Tomaz apresenta; Confraternização do Time; Data, Hora e Localização.
+- Aviso da camiseta atualizado para Time Raul Tomaz.
+- Removida a seta no botão Enviar resposta e a linha sob o selo na tela final.
+- Botão Pix Copia e Cola continua sendo uma cópia do código estático salvo em `pix-copia-e-cola.txt`.
+
+### Como gerar um código Pix Copia e Cola próprio pelo banco
+No aplicativo da conta que receberá os pagamentos: Pix > Receber > QR Code estático > informar valor 89,00 > Gerar. Salvar QR e copiar o código Pix Copia e Cola correspondente. O recebedor deve conferir o nome da conta e o valor em um aplicativo bancário antes de divulgar. O site não confirma o recebimento automaticamente.

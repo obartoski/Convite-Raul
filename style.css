@@ -606,3 +606,10 @@ body {
 .payment-disclaimer { color:#88716b; font:400 10px/1.65 'Manrope',sans-serif; max-width:293px; margin:15px auto 0; }
 .response-back { margin-top:23px!important; }
 @media(max-width:360px){.qr-paper img { width:170px; height:170px; }}
+
+/* V15: títulos em português e espaçamento editorial adaptável ao mobile */
+.main-title { line-height:1.03; max-width:100%; }
+.main-title .title-top { font-size:clamp(27px,7.7vw,39px); letter-spacing:-.042em; white-space:nowrap; }
+.main-title .title-bottom { font-size:clamp(52px,14vw,75px); letter-spacing:-.05em; }
+.response-seal { margin-bottom:20px; }
+@media(max-width:360px) { .main-title .title-top { font-size:clamp(25px,7.3vw,29px); } .main-title .title-bottom { font-size:clamp(47px,14vw,57px); } }
