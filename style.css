@@ -613,3 +613,20 @@ body {
 .main-title .title-bottom { font-size:clamp(52px,14vw,75px); letter-spacing:-.05em; }
 .response-seal { margin-bottom:20px; }
 @media(max-width:360px) { .main-title .title-top { font-size:clamp(25px,7.3vw,29px); } .main-title .title-bottom { font-size:clamp(47px,14vw,57px); } }
+
+
+/* V16 ajustes finais */
+.main-title, .title-top, .title-bottom { text-align: center; }
+.shirt-note, .program-note, .dress-note {
+  text-align: center;
+  max-width: 260px;
+  margin: 12px auto 0;
+  color: #7a605b;
+  font: 500 13px/1.65 'Manrope', sans-serif;
+}
+.shirt-note strong, .program-note strong, .dress-note strong {
+  display: block;
+  margin-top: 2px;
+  color: #7a1f28;
+  font: 700 13px/1.65 'Manrope', sans-serif;
+}

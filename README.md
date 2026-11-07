@@ -34,3 +34,9 @@ O mesmo payload do QR está em `pix-copia-e-cola.txt`.
 
 ### Como gerar um código Pix Copia e Cola próprio pelo banco
 No aplicativo da conta que receberá os pagamentos: Pix > Receber > QR Code estático > informar valor 89,00 > Gerar. Salvar QR e copiar o código Pix Copia e Cola correspondente. O recebedor deve conferir o nome da conta e o valor em um aplicativo bancário antes de divulgar. O site não confirma o recebimento automaticamente.
+
+
+## Ajustes da V16
+- nome do evento alterado para `CONFRA DO TIME`
+- orientação da camisa em duas linhas com destaque para `Camisa do time Raul Tomaz`
+- bloco centralizado
