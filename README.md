@@ -1,42 +1,28 @@
-# Convite Raul Tomaz — V14 (programação + Pix)
+# Raul Tomaz — V17 (integração de presenças com Google Sheets)
 
-## Publicação no GitHub Pages
-Suba `index.html`, `confirmacao.html`, `style.css`, `script.js`, `confirmacao.js` e todos os arquivos de `assets/` à raiz do repositório, sem alterar os nomes. Configure **Settings > Pages > Deploy from a branch > main > /(root)**.
+## 1. Atualize o Google Apps Script
+Abra sua planilha Google Sheets > **Extensões > Apps Script**. Substitua o conteúdo do arquivo `Código.gs` por **todo** o código de `apps-script-Codigo.gs` e salve.
 
-## Novidades
-- 12h: início da aula na areia
-- 13h30: abertura do buffet
-- 17h30: encerramento
-- Camiseta do Time Raul Tomaz para participantes da aula na areia
-- Buffet de espetos à vontade incluído; bebidas cobradas à parte
-- R$ 89,00 por pessoa
-- Após selecionar "Estarei presente", uma seção com QR Code Pix estático no valor de R$ 89,00, botão Copiar Pix Copia e Cola e chave Pix alternativa aparece na página de resposta.
-- Após "Não poderei", a seção Pix não aparece.
+## 2. Atualize a implantação EXISTENTE
+No Apps Script vá em **Implantar > Gerenciar implantações > ícone lápis**.
+Em **Versão**, selecione **Nova versão** e clique em **Implantar**.
+**Não basta salvar o código:** a implantação continua na versão antiga até você atualizá-la.
+Mantenha **Executar como: Eu** e **Quem pode acessar: Qualquer pessoa**. Confira se a URL `/exec` continua a mesma.
 
-## IMPORTANTE — antes de divulgar
-1. **Conferir no banco se a chave Pix é válida e pertence ao recebedor esperado.** O nome no payload do QR é apenas uma etiqueta (RAUL TOMAZ) e não verifica quem é o dono da chave. Abra a cobrança no aplicativo bancário e confira o nome real antes de aprovar.
-2. O Pix estático pode ser reutilizado; não possui vencimento próprio, mas deixa de funcionar se a chave for removida ou ficar inválida.
-3. O link de pagamento, no sentido de URL de checkout bancário, não pode ser derivado de uma chave Pix sozinha. O botão "Copiar Pix Copia e Cola" é a alternativa nativa para pagamento no celular.
-4. **O formulário de presença ainda é uma demonstração e não salva em planilha; o site também não verifica pagamento.** Não trate a confirmação de tela como confirmação de pagamento nem como registro oficial de presença. Integre com backend/Google Sheets antes de uso real.
-5. Um QR Pix estático não identifica automaticamente quem pagou; é necessário conferir o extrato/comprovantes ou usar integração bancária.
+## 3. Publique o convite atualizado
+Envie para o GitHub Pages os arquivos `index.html`, `confirmacao.html`, `style.css`, `script.js`, `confirmacao.js` e a pasta `assets/`.
+A URL do Apps Script está configurada no início de `script.js`:
+https://script.google.com/macros/s/AKfycby3fR9jZwrq9Asfuy-KgGng9PQZRplLUXqinboHYjh4MjuPWA1fB4O3N0fg-FRj6ccVwQ/exec
 
-### Chave informada
-`d218854b-8f02-49ba-b81d-e5b543291480`
+## 4. Teste real (sem pagar nada)
+Abra o site, informe o nome `TESTE INTEGRACAO` e clique em **Estarei presente > Enviar resposta**.
+Confirme na aba **Respostas**: data/hora, nome, Confirmado, Pendente. Somente se o script verificar que existe registro o site abrirá `confirmacao.html`.
+Depois tente `TESTE RECUSA` com **Não poderei**; deve constar `Não vai` e `Não se aplica`, sem mostrar o Pix.
+Depois dos testes, apague as duas linhas de teste da planilha (não apague os cabeçalhos da linha 5).
 
-### Pix Copia e Cola
-O mesmo payload do QR está em `pix-copia-e-cola.txt`.
+## Como o sistema funciona
+O POST ao Apps Script é enviado pelo navegador. Como respostas POST do Apps Script podem ser bloqueadas por CORS, o site consulta um identificador aleatório de registro via JSONP até confirmar a existência na planilha. Caso não consiga verificar, mostra um erro e mantém o formulário aberto. Tentar novamente com os mesmos dados reutiliza o identificador, evitando duplicar o mesmo envio.
 
-## Alterações da V15
-- Identidade em português: Raul Tomaz apresenta; Confraternização do Time; Data, Hora e Localização.
-- Aviso da camiseta atualizado para Time Raul Tomaz.
-- Removida a seta no botão Enviar resposta e a linha sob o selo na tela final.
-- Botão Pix Copia e Cola continua sendo uma cópia do código estático salvo em `pix-copia-e-cola.txt`.
+A aba `Respostas` deve conservar os títulos **na linha 5**: `Data da resposta`, `Nome completo`, `Presença`, `Pagamento`. As colunas de valor retiradas **não fazem falta**. O script cria a coluna técnica oculta `Protocolo` para confirmar envios e evitar duplicações por tentativa repetida. O status de pagamento é **manual**. As abas `Confirmados` e `Não vão` continuam utilizando as fórmulas que já existiam.
 
-### Como gerar um código Pix Copia e Cola próprio pelo banco
-No aplicativo da conta que receberá os pagamentos: Pix > Receber > QR Code estático > informar valor 89,00 > Gerar. Salvar QR e copiar o código Pix Copia e Cola correspondente. O recebedor deve conferir o nome da conta e o valor em um aplicativo bancário antes de divulgar. O site não confirma o recebimento automaticamente.
-
-
-## Ajustes da V16
-- nome do evento alterado para `CONFRA DO TIME`
-- orientação da camisa em duas linhas com destaque para `Camisa do time Raul Tomaz`
-- bloco centralizado
+**Atenção:** o endereço Apps Script com acesso público aceita envios de qualquer pessoa que conheça a URL, não é uma solução autenticada nem proteção contra abuso. Para mais segurança, pode ser necessário CAPTCHA ou um backend autenticado. Não envie dados sensíveis. Os nomes já são dados pessoais: divulgue o link apenas aos convidados e restrinja a planilha às pessoas responsáveis. O pagamento Pix não é verificado automaticamente. **Valide a chave Pix e o valor no aplicativo bancário antes de publicar.**

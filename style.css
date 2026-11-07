@@ -630,3 +630,8 @@ body {
   color: #7a1f28;
   font: 700 13px/1.65 'Manrope', sans-serif;
 }
+
+/* V17: feedback de envio para integração real */
+.send-status { margin:12px auto 0; max-width:290px; text-align:center; font:500 11px/1.6 'Manrope',sans-serif; color:#74313b; }
+.send-status[hidden] {display:none!important;}
+.submit-btn:disabled {opacity:.7;cursor:wait;}

@@ -1,19 +1,15 @@
 (() => {
   let data = null;
   try {
-    const stored = sessionStorage.getItem('raul_preview_response');
+    const stored = sessionStorage.getItem('raul_confirmed_response');
     if (stored) data = JSON.parse(stored);
   } catch {}
-  if (!data && location.hash.length > 1) {
-    try { data = JSON.parse(decodeURIComponent(location.hash.slice(1))); } catch {}
-    history.replaceState(null, '', location.pathname + location.search);
-  }
   const status = document.getElementById('responseStatus');
   const title = document.getElementById('responseTitle');
   const summary = document.getElementById('responseSummary');
   const selected = document.getElementById('responseSelected');
   const message = document.getElementById('responseMessage');
-  if (!data || data.preview !== true || typeof data.name !== 'string' || !['Sim', 'Não'].includes(data.presence)) {
+  if (!data || data.saved !== true || typeof data.name !== 'string' || !['Sim', 'Não'].includes(data.presence)) {
     status.textContent = 'CONVITE RAUL TOMAZ';
     title.textContent = 'Seu convite está aqui.';
     return;
@@ -21,7 +17,7 @@
   const firstName = data.name.trim().split(/\s+/)[0].slice(0, 50);
   const attending = data.presence === 'Sim';
   title.textContent = attending ? `Perfeito, ${firstName}!` : `Tudo certo, ${firstName}.`;
-  status.textContent = attending ? 'PRESENÇA SELECIONADA' : 'AUSÊNCIA SELECIONADA';
+  status.textContent = attending ? 'PRESENÇA REGISTRADA' : 'RESPOSTA REGISTRADA';
   message.textContent = attending
     ? 'Vai ser um prazer ter você com a gente!'
     : 'Que pena! Esperamos te encontrar na próxima.';
