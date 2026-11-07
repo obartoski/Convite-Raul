@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
   <main class="page-shell">
@@ -44,7 +44,7 @@
             </article>
             <article class="detail-cell">
               <span class="detail-label">TIME</span>
-              <strong class="detail-value">Em breve</strong>
+              <strong class="detail-value">12h – 17h30</strong>
             </article>
           </div>
           <article class="detail-location">
@@ -53,10 +53,20 @@
           </article>
         </section>
 
+        <section class="schedule-section" aria-label="Programação da confraternização">
+          <p class="section-kicker">PROGRAMAÇÃO</p>
+          <div class="schedule">
+            <div class="schedule-row"><time>12h</time><span>Início da aula na areia</span></div>
+            <div class="schedule-row"><time>13h30</time><span>Abertura do buffet</span></div>
+            <div class="schedule-row"><time>17h30</time><span>Encerramento</span></div>
+          </div>
+          <p class="dress-note">Para a aula na areia, venha com sua <strong>camiseta personalizada.</strong></p>
+        </section>
+
         <section class="experience-block">
           <p class="section-kicker">A EXPERIÊNCIA</p>
           <p class="experience-copy">Quadras liberadas <span aria-hidden="true">•</span> Drinks &amp; gastronomia</p>
-          <p class="experience-note">Consumação inclusa</p>
+          <p class="experience-note">Buffet de espetos à vontade incluso <span class="mid-dot">·</span> Bebidas à parte</p>
           <p class="price-line">Taxa de participação <strong>R$ 89,00 por pessoa</strong></p>
         </section>
 
@@ -86,12 +96,12 @@
             <button class="choice-btn" type="button" data-choice="Não" aria-pressed="false"><span class="choice-indicator" aria-hidden="true"></span>Não poderei</button>
           </div>
           <input type="hidden" id="presenceValue" name="presenceValue" value="Sim">
-          <button class="submit-btn" id="submitBtn" type="submit">ENVIAR RESPOSTA <span aria-hidden="true"></span></button>
+          <button class="submit-btn" id="submitBtn" type="submit">ENVIAR RESPOSTA <span aria-hidden="true">↗</span></button>
         </form>
       </div>
     </div>
   </div>
 
-  <script src="script.js?v=19"></script>
+  <script src="script.js?v=20"></script>
 </body>
 </html>

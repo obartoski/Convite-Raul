@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
   <main class="page-shell response-page">
@@ -29,11 +29,23 @@
             <span>RESPOSTA SELECIONADA</span>
             <strong id="responseSelected"></strong>
           </div>
+          <section class="payment-panel" id="paymentPanel" hidden aria-label="Pagamento da participação">
+            <div class="payment-divider"></div>
+            <p class="section-kicker">PAGAMENTO DA PARTICIPAÇÃO</p>
+            <p class="payment-amount">R$ 89,00 <span>/ pessoa</span></p>
+            <p class="payment-desc">Escaneie o QR Code com o aplicativo do banco ou copie o código Pix abaixo.</p>
+            <div class="qr-paper"><img src="assets/pix-89-reais.png" alt="QR Code Pix no valor de R$ 89,00" width="205" height="205"></div>
+            <button class="pix-copy" id="copyPix" type="button">COPIAR PIX COPIA E COLA</button>
+            <p class="copy-feedback" id="copyFeedback" role="status" aria-live="polite"></p>
+            <p class="pix-key-label">CHAVE PIX ALTERNATIVA</p>
+            <button class="key-copy" id="copyKey" type="button">d218854b-8f02-49ba-b81d-e5b543291480</button>
+            <p class="payment-disclaimer">Confira o nome do recebedor no aplicativo do banco antes de pagar. O site não identifica nem confirma pagamentos automaticamente.</p>
+          </section>
           <a class="response-back" href="index.html">VOLTAR AO CONVITE</a>
         </div>
       </article>
     </section>
   </main>
-  <script src="confirmacao.js?v=19"></script>
+  <script src="confirmacao.js?v=20"></script>
 </body>
 </html>

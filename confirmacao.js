@@ -28,4 +28,34 @@
   message.hidden = false;
   summary.hidden = false;
   selected.textContent = attending ? 'Estarei presente' : 'Não poderei comparecer';
+  if (attending) document.getElementById('paymentPanel').hidden = false;
+})();
+
+// O QR Code e o código de copiar e colar representam o mesmo Pix estático.
+// O recebedor e a efetiva liquidação devem ser conferidos no aplicativo bancário.
+(() => {
+  const pix = '00020126580014br.gov.bcb.pix0136d218854b-8f02-49ba-b81d-e5b543291480520400005303986540589.005802BR5910RAUL TOMAZ6009GUARULHOS62070503***6304283C';
+  const key = 'd218854b-8f02-49ba-b81d-e5b543291480';
+  async function copy(value, feedback) {
+    try {
+      await navigator.clipboard.writeText(value);
+      feedback.textContent = 'Copiado! Abra o aplicativo do banco para pagar.';
+    } catch {
+      const field = document.createElement('textarea');
+      field.value = value;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed'; field.style.opacity = '0';
+      document.body.appendChild(field); field.select();
+      const ok = document.execCommand('copy');
+      field.remove();
+      feedback.textContent = ok ? 'Copiado! Abra o aplicativo do banco para pagar.' : 'Não foi possível copiar automaticamente.';
+    }
+  }
+  const copyPix = document.getElementById('copyPix');
+  const copyKey = document.getElementById('copyKey');
+  const feedback = document.getElementById('copyFeedback');
+  if (copyPix && copyKey && feedback) {
+    copyPix.addEventListener('click', () => copy(pix, feedback));
+    copyKey.addEventListener('click', () => copy(key, feedback));
+  }
 })();
