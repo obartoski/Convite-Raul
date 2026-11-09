@@ -607,12 +607,33 @@ body {
 .response-back { margin-top:23px!important; }
 @media(max-width:360px){.qr-paper img { width:170px; height:170px; }}
 
-/* V15: títulos em português e espaçamento editorial adaptável ao mobile */
-.main-title { line-height:1.03; max-width:100%; }
-.main-title .title-top { font-size:clamp(27px,7.7vw,39px); letter-spacing:-.042em; white-space:nowrap; }
-.main-title .title-bottom { font-size:clamp(52px,14vw,75px); letter-spacing:-.05em; }
+/* V18: título centralizado e mais harmônico */
+.main-title {
+  max-width: 100%;
+  line-height: .96;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.main-title .title-top {
+  font-size: clamp(34px, 9.4vw, 44px);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.main-title .title-bottom {
+  font-size: clamp(25px, 6.6vw, 31px);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: var(--accent);
+}
 .response-seal { margin-bottom:20px; }
-@media(max-width:360px) { .main-title .title-top { font-size:clamp(25px,7.3vw,29px); } .main-title .title-bottom { font-size:clamp(47px,14vw,57px); } }
+@media(max-width:360px) {
+  .main-title { gap: 1px; }
+  .main-title .title-top { font-size: clamp(29px, 8.9vw, 35px); }
+  .main-title .title-bottom { font-size: clamp(20px, 6vw, 24px); letter-spacing: 0.03em; }
+}
 
 
 /* V16 ajustes finais */
