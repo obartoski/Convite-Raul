@@ -617,7 +617,7 @@ body {
   gap: 2px;
 }
 .main-title .title-top {
-  font-size: clamp(34px, 9.4vw, 44px);
+font-size: clamp(29px, 8vw, 38px);
   letter-spacing: -0.045em;
   white-space: nowrap;
   color: var(--ink);
@@ -631,7 +631,7 @@ body {
 .response-seal { margin-bottom:20px; }
 @media(max-width:360px) {
   .main-title { gap: 1px; }
-  .main-title .title-top { font-size: clamp(29px, 8.9vw, 35px); }
+  .main-title .title-top { font-size: clamp(26px, 7.8vw, 31px); }
   .main-title .title-bottom { font-size: clamp(20px, 6vw, 24px); letter-spacing: 0.03em; }
 }
 
